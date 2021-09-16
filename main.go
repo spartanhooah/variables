@@ -3,16 +3,16 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math/rand"
 	"os"
 )
 
 const prompt = "and press ENTER when ready."
 
 func main() {
-	var firstNumber = 2
+	var firstNumber = rand.Intn(8)
 	var secondNumber = 5
 	var subraction = 7
-	var answer int
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -36,6 +36,6 @@ func main() {
 	reader.ReadString('\n')
 
 	// give the answer
-	answer = firstNumber * secondNumber - subraction
+	answer := firstNumber * secondNumber - subraction
 	fmt.Println("The answer is", answer)
 }
